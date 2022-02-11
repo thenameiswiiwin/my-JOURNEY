@@ -1,0 +1,154 @@
+WHAT IS THE INTERNET?
+
+    \__ the world's popular computer network. The internet is notable for its decentralization.
+    \__ the internet is a global network of computers connected to each other which communicate through a standardized set of protocols.:
+
+--------------------------------------------------------------------------------------------------------
+
+WHERE IS THE INTERNET ?
+
+    \__ The internet has 3 parts:
+
+        1. The Last Mile --- the part of the internet that connects homes and small businesses to the internet.
+        2. Data Centers --- rooms full of servers that store user data and host online apps and content.
+        3. The Backbone --- consists of long-distance networks -- mostly on fiber optics cables - that carry data between data centers and consumers.
+
+--------------------------------------------------------------------------------------------------------
+
+WHAT IS AN IP ADDRESS?
+
+    \__ Internet Protocol addresses --- numbers that computers use to identify each other on the internet.
+
+--------------------------------------------------------------------------------------------------------
+
+WHAT IS IPv6?
+
+    \__ Internet Standard --- unique addresses -- 39 degits long.
+
+--------------------------------------------------------------------------------------------------------
+
+HOW WIRFELESS INTEWRNET WORK ?
+
+    \__ Two types of wireless access
+
+        1. Wifi
+        2. Cellular
+
+    \__ Wifi network use unlicensed spectrum: Electromagnetic frequencies that are available for anyone to use without charge.
+
+    \__ Cellular network are most centralized. They work by breaking up the service territory into cells. In the densest areas, cells can be as small as a single city block in rural areas a cell can be miles across.
+
+--------------------------------------------------------------------------------------------------------
+
+WHAT IS THE CLOUD ?
+
+    \__ Storing files on servers and delivering software over the internet, cloud computing provides users with a simpler, morereliable computing experince. Cloud computing allows consumers and businesses to treat computing as a utility, leaving the technical details to technology companies.
+
+    \__ Hard drive --> PCs --> Cloud (like google docs, dropbox, google drive, Gmail and Hotmail are cloud email services)
+
+--------------------------------------------------------------------------------------------------------
+
+WHAT IS WORLD WIDE WEB ?
+
+    \__ a popular wat to publish information on the internet.
+--------------------------------------------------------------------------------------------------------
+
+WHAT WEB BROWSER ?
+
+    \__ a computer program that allows users to download and view websites.
+--------------------------------------------------------------------------------------------------------
+
+WHAT IS SSL ?
+
+    \__ Secure Socket Layer --- a family of encryption technologies that allows web users to protech the privacy of information they transmit over the internet.
+
+    \__ The Lock logo --- Indicating that your communications with the site are encrypted. The lock supposed to signal that third parties wont be able to read any information you sent or receive. Under the hood, SSL accomplishes that by transforming your data into a coded message that only recipient knows how to decipher. If a malicious party is listening to the conversation, it will only see a seemingly random string of characters, not the contents of your emails, Fb posts, credit card numbers, or other private information.
+--------------------------------------------------------------------------------------------------------
+
+WHAT IS DOMAIN NAME SYSTEM ?
+
+    \__ DNS --- name of your website instead of tying in the IP Address.
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------
+
+HOW THE INTERNET WORK?
+
+  1. Data Center
+      \__ your data is stored is a SSD (solid state device) in the data center.
+      \__ this ssd acts as the internal memory of a server.
+      \__ The Server is simply a powerful computer whose job is to provide you the video or other stored content for when you request it.
+      \__ A server is capable to store multiple websites, and if the server consists of multiple websites all the websites cannot be accessed with the server's IP address.
+
+  2. Network of Optical Fiber Cables
+      \__ which connect between the data center and your devices.
+      \__ your phone could be connected to the internet via cellular data or any Wi-Fi router, but ultimately at some point your phone will be connected to this network of optical fiber cables.
+
+# CONCEPT:
+# IP Address
+## \__ a string of numbers, that make all devices identified uniquely. (192.168.1.1)
+## \__ An IP address act as a shipping address through which all information reaches its destination.
+#
+# Domain Name
+## \__ easier to access the internet, then typing the IP address numbers.
+
+  3. DNS (Domain Name System)
+    \__ its like a huge phone book.
+    \__ this is where the internet get its IP Addresses. The internet make a domain name request to DNS.
+    \__ the DNS server help the internet search for domain names/IP addresses.
+    \__ your internet service provider or other organizations can manage the DNS server.
+
+# PROTOCOLS:
+## \__ protocols management of complex flow of data packets.
+## \__ the protocols set the rules for for data packet conversion, attachment of the source and destination addresses to each packet, and the rules for routers etc...
+## \__ for different applications, the protocols used are different.
+
+# RECAP:
+1. Enter the domain name.
+2. The browser sends a request to the DNS server to get the corresponding IP address.
+3. After getting the IP address, your browser simply forwards the request to the data center (to the respective server).
+4. Once the server gets the request to access a particular website, the data flow starts.
+5. The data is transferred in digital format via Optical Fiber Cables (in the form of light pulses).
+6. These light pulses then travel thousands of miles via the optical fiber cable to reach their destination.
+7. During their journey, they often have to go through tough terrains (hilly areas, under the sea).
+    \__ Companies that maintain optical cable networks: ATT, Orange, Verizon, Google
+    \__ Optical Network cables it the backbone of the internet.
+8. These optical fiber cables carrying the light are stretched across the seabed to your doorstep where they are connected to a router.
+9. The router converts these light signals ti electrical signals.
+10. An Eternet cable is then used to transmit the electrical signals to your laptop.
+10b. If you are accessing the internet using cellular data from the optical cable, the signal has to be sent to a cell tower.
+  \__ From the cell tower, the signal reaches your cell phone in the form of electromagnetic waves.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

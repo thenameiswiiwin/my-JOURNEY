@@ -1,0 +1,62 @@
+# Hosting
+  - the computer & network infrastructure that keeps your website available across the internet.
+  - hosting also provides other key services like email
+
+# How Does It All Work?
+  - all start with a server.
+  - Server --> a powerful computer that is kept in a highly secure, purpose built, multi-million pound facility called a datacentre.
+  - Datacentre --> provides the necessary power and network connectivity with temperature control, backup & fire suppression systems and high levels of physical security.
+  - Security --> important at the server level so the server is built with things like dual parts for critical components like hard disks so there is no single point of failure.
+
+  - so when you order a hosting service what youre ordering is the physical disk space on one of the servers as well as the bandwidth which is the network connection to the server.
+
+# Most of the time you will see hosting advertised in terms of Disk space and Bandwidth and is measured in GigaBytes like 5GB of space and 100GB of bandwidth.
+  - Diskspace --> covers your website files including things like databases as well as your emails.
+  - Monthly Bandwidth --> the network traffic to and from your web hosting and most of this will be email traffic that you send and receive but it will also include traffic to your website.
+
+# In order to manage your web hosting you’ll need a user friendly interface called a Control Panel. One of the most popular is called cPanel and this allows you to manage all aspects of your hosting such as setting up email addresses, managing domains, databases and loads of other stuff with an easy to use interface.
+
+# If you want to build your own website then you can use a Website Builder tool which is included and this allows non technical people to build a website using pre-made templates.
+
+# For more advanced users or if you have a web designer there is also a ton of pre-installed software for building more advanced websites as well as databases such as MySQL.
+# These free tools include popular applications like WordPress as well as advanced ecommerce tools like Prestashop & Magento so you can sell online.
+# Other security features are things like anti spam and data back up. These ensure that your emails always get through as well as keeping your data safe.
+# If you’re with one hosting company & you want to switch this is a very straightforward process called migration. Your files just need to be copied over & some small changes need to be made to your domain name.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# SHARE HOSTING
+  - sharing your hosting with others
+
+# PRO
+  - you can get hosting at a crazy affordable cost.
+
+# CON
+  - resources, everyone is sharing the same RAM and processors.
+  - Denial-of-Service (DoS) attack --> shut down a machine or network, making it inaccessible to its intended users. DoS attacks accomplish this by flooding the target with traffic, or sending it information that triggers a crash. If one of the website in your share hosting is being attack, then your site will be down as well.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# VPS
+  - virtual private server.
+  - act as its own isolated server, but its shared with other virtual private servers on a single physical hardware server.
+
+# PRO
+  - giving you dedicated RAM and processors.
+  - guaranteed the resources youre paying for.
+  - easily Scalible
+
+# CON
+  - massive headache to manage
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# DEDICATED HOSTING
+  - having an entire physical server to yourself
+  - AWS, Azure, DigitalOcean
+
+# PRO
+  - dont have to share resources with others.
+
+# CON
+  - expensive

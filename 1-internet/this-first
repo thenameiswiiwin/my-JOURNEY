@@ -1,0 +1,23 @@
+# INTERNET
+  - The internet is a global network of computers connected to each other which communicate through a standardized set of protocols.
+
+# HTTP
+  - http is the TCP/IP based application layer communication protocol which standardizes how the client and server communicate with each other.
+  - it defines how the content is requested and transmitted across the internet.
+
+# Browsers
+  - a web browser is a software application that enables a user to access and display web pages or other online content through its graphical user interface.
+
+# DNS
+  - the domain name system is a phonebook of the internet.
+  - human access information online through domain names, like nytimes.com or espn.com.
+  - web browsers interact through internet protocol (IP) addresses.
+  - dns translates domain names to IP addresses so browsers can load internet resources.
+
+# Domain Name
+  - a domain name is a unique, easy-to-remember address used to access websites, such as `google.com` or `facebook.com`.
+  - users can connect to websites using domain names thanks to the DNS system.
+
+# Hosting
+  - web hosting is an online service that allows you to publish your website files onto the internet.
+  - so, anyone who has access to the internet has access to your website.

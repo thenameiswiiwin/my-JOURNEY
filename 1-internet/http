@@ -1,0 +1,52 @@
+1. What is HTTP?
+    \__ Hypertext Transfer Protocol.
+    \__ HTTP is the foundation of World Wide Web.
+    \__ used to load web pages using hypertext link.
+    \__ HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack.
+
+# Typical Flow over HTTP:
+## \__ a client machine making a request to a server, which then sends a response message.
+
+2. What's in an HTTP request?
+    \__ the way internet communications platforms such as web browsers ask for the information they need to load a website.
+    \__ each HTTP request made across the internet carries with it a series of encoded data that carries different type information.
+
+# A typical HTTP request contains:
+## \__ HTTP version type
+## \__ a URL
+## \__ an HTTP method
+## \__ HTTP request headers
+## \__ Optional HTTP body
+
+3. What's an HTTP method?
+    \__ the action that the HTTP request expects from the queried server.
+    \__ GET / POST request.
+
+4. What are HTTP request headers?
+    \__ text information stored in key-value pairs, and they are included in every HTTP request.
+    \__ these header communicate core information, such as what browser the client is using what data is being requested.
+
+5. What's in an HTTP request body?
+    \__ contains the 'body' of information the request is transferring.
+    \__ the body of an HTTP request contains any information being submmitted to the web server, such as a username and password, or any other data entered into a form.
+
+6. What's in an HTTP response?
+    \__ is what web clients (browsers) receive from an Internet server in answer to an HTTP request.
+
+# A typical HTTP response contains:
+## \__ an HTTP status code
+## \__ HTTP response headers
+## \__ optional HTTP body
+
+      A) What's an HTTP status code?
+        \__ 3 digits codes indicate whether an HTTP request has been successfully completed.
+        \__ status codes broken into 5 blocks:
+            - 1xx Information
+              2xx Success
+              3xx Redirection
+              4xx Client Error
+              5xx Server Error
+        > the "xx" refers to the different numbers between 00 and 99.
+
+
+

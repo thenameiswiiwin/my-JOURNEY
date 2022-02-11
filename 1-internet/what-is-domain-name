@@ -1,0 +1,52 @@
+# Summary
+  - domain names are a key part of the internet infrastructure.
+  - they provide a human-readable address for any web server available on the internet.
+  - any internet-connected computer can be reaches through a public IP address, either an IPv4 address (173.194.121.32) or an IPv6 address (2027:0da8:8b73:0000:0000:8a2e:0370:1337)
+  - computers can handle such addressees easily, but people have a hard time finding out who's running the server or what service the website offers.
+  - IP addresses are hard to remember and might change over time.
+*** TO SOLVE ALL THOSE PROBLEMS WE USE HUMAN-READABLE ADDRESSES CALLED DOMAIN NAMES.
+
+
+# DEEPER DIVE
+  1. Structure of Domain Names
+    - a domain name has a simple structure made of several parts.
+    - developer . mozilla . org
+      > label 1 - label 2 - TLD
+      > each part provides specific information about the whole domain name.
+
+    \__ TLD
+      > Top-Level Domain
+      > TLD tell users the general purpose of the service behind the domain name.
+      > the most generic TLDs --> .com, .org, .net --> dont require web services to meet any particular criterial
+      > But some TLDs enforce stricter policies so it has clearer what their purpose is:
+        + local TLDs such as .us, .fr, .se => can require the service to provided in a given language or hosted in a certain country -- they are supposed to indicate the resource in a particular language or country.
+        + TLDs containing .gov => are only allowed to be used by government departments
+        + the .edu => is only for use by educational and academic insitutions.
+      > TLDs can contain speical as well as latin charaters. A TLD's maximum length is 63 characters, although most are around 2-3.
+
+    \__ Label (or Component)
+      > Second-Level Domain
+      > the label are what allow the TLD
+      > a label is a case-sensitive character sequence anywhere from one to sixty-three character in length, containing only the letters (A - Z), digits (0 - 9), and the (-) character
+      > example of a valid lable: hello-strange-person-16-how-are-you, a, 96
+      > a domain name can have many labels.
+
+  2. Buying a Domain Name
+    - Who owns a domain name?
+      > NO ONE, you can pay for the right to use a domain name for one or more years.
+      > you can renew your right, and your renewwal has priority over other people's application.
+
+    - Finding an Available Domain Name
+      > whois (domain name)
+
+  3. DNS Refresing
+    - DNS database are stored on every DNS server worldwide, and all these refer to a few special servers called "authoritative name servers" or "Top-Level DNS servers" --- these are like the boss servers that manage the system.
+    - whenever your registrar creates or updates any information for given domain, the information must be refreshed in every DNS database.
+    - each DNS server that knows about a given domain stores the information for some time before it is automatically invalidated and then refreshed (the DNS server queries an authoritative server and fetches the updated information from it).
+    - it take some time for DNS servers that know about this domain name to get the up-to-date information.
+
+  4. How Does a DNS Request Work?
+    a. Type mozilla.org in your browser's location bar
+    b. Your browser asks your computer if it already recognizes the IP address identified by this domain name (using a local DNS cache). If it does, the name is translated to the IP address and the browser negotiates contents with the web server.
+    c. If your computer does not know which IP is behind mozilla.org name, it goes on to ask the DNS server, whose job is precisely to tell your computer which IP address matches each registered domain name.
+    d. Now that the computer knows the requested IP address, your browser can negotiate contents with the web server.

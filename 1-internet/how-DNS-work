@@ -1,0 +1,97 @@
+What is Network? --> What is Internet? --> What is DNS?
+
+What is Network?
+  - A group of computers and other devices that are connected to each other.
+
+What is Internet?
+  - A global network of networks.
+  - Find the device by IP address. Each device on the internet has an IP address
+    \__ An IP address is unique numeric address to find the device on the internet.
+      > 192.168.1.1
+
+What is DNS?
+  - The browser use DNS to HELPS get the IP address from the domain name.
+    \__ The browser sent the domain name. Then get back from the DNS an IP address.
+
+DNS --> Domain Name System
+
+User
+  |
+  v
+  |- User's Computer --> Browser cache, DNS cache, Hosts file.
+  |
+  |X (No IP address found)
+  |
+  v
+  | |- Recursive DNS Servers --> Cache
+  |
+  |X (No IP address found)
+  |
+  v
+  | | |- Root DNS Servers --> TLDs (.com) - Only has TLD information.
+  |
+  v
+  | |- Recursive DNS Servers
+  |
+  v
+  | | |- TLD Server --> NS - DNS info of domain
+  |
+  v
+  | |- Recursive DNS Servers
+  |
+  v
+  | | |- Authoritative Name Server --> Domain Info
+  |
+  v
+  | |- Recursive DNS Servers
+  |
+  v
+  |- User's Computer
+  |
+  v
+User
+
+-------------------------------------------------------------------------------------------------
+
+DNS Records or Zone Files
+  - The information that is being store in Authoritative Name Server.
+      1. A record
+        > Address Record - indicates the IP address of the domain
+          - Type: A
+          - Name: @, app
+          - Value: 185.199.108.153
+          - TTL: 1440 seconds
+      2. CNAME record
+        > Conical name record - points a domain/subdomain to another domain
+          - Type: CNAME
+          - Name: www, blog
+          - Value: @, thenameiswiiwin.info
+          - TTL: 1440 seconds
+      3. MX record
+       > Mail Exchanger - Helps route the emails to the relevant server.
+          - Type: MX
+          - Name: @
+          - Value: 10(priority number) mail.example.com
+          - TTL: 1440 seconds
+      4. TXT record
+       > Text record - Allows us to add arbitrary text to domain name
+          - Type: TXT
+          - Name: @
+          - Value: Some dummy text.
+          - TTL: 1440 seconds
+      5. NS record
+       > Name server record - Indicated the authoritative servers.
+          - Type: NS
+          - Name: @
+          - Value: nsl.example.com
+          - TTL: 1440 seconds
+
+
+Inspecting DNS Records
+  - host dig nslookup
+    > host -t (DNS Type) (domain name)
+
+-------------------------------------------------------------------------------------------------
+
+https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/
+

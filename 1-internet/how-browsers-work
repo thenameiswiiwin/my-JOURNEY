@@ -1,0 +1,126 @@
+* Browsers are considered single treaded.
+
+Browser's High Level Structure:
+  1. User Interface
+    - this includes address bar, back/forward button, bookmarking menu etc...
+    - every part of the browser display except the window where you see the requested page.
+  2. Browser Engine
+    - Facilitating the communication between the UI and the Rendering engine
+  3. Rendering Engine
+    - responsible for displaying requested content.
+    - Take all HTML/CSS and display it on the screen for you
+    - example: if the requested content is HTML, the rendering engine parses HTML and CSS, and displays the parsed content on the screen.
+  4. Networking
+    - Networking block uses HTTP and request stuff all over the internet
+    - Make calls to DNS to resolves Domain names
+  5. UI Backend
+    - Do the drawing on your computer.
+    - used for drawing basic widgets like combo boxes and windows. This backend exposes a generic interface that is not platform specific. Underneath it uses operating system user interface methods.
+  6. JS Interpreter
+    - use to parse and execute JS code.
+  7. Data Storage
+    - this is a persistence layer.
+    - The browser may need to save all sorts of data locally like cookies, or search history.
+    - Browsers also support mechanisms such as: localStorage, IndexedDB, WebSQL, and FileSystem.
+
+Steps of Rendering Process:
+  Resource Gathering:
+    1. display web pages on web browser
+    2. gather html, css, js, and display it
+
+  Parse HTML & Create DOM Tree
+    1. gather and download all the resources, and create a Tree of DOM objects
+
+  Create Render Tree From DOM Tree
+    1. take all the css styles and apply them to the right element to the the render tree
+
+  Layout
+    1. give size and position the render tree (CSS)
+
+  Painting
+    1. Take all 4 steps, and sent it to the UI backend to actually draw on the monitor/screen
+    2. handle the z dimension (stuff that overlaps)
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+Navigation:
+  - navigation is the first step in loading a web page.
+  - it occurs whenver a user requests a page by entering a URL into the address bar, clicking a link, submitting a form, as well as other actions.
+  - * one of the goals of web performance is to minimize the amount of time a navigation takes to complete *
+
+  1. DNS Lookup
+    - first step of navigating to a web page is finding where the assets for that page is located.
+    - can be problematic fo performance, each DNS look up has to go from the phone to the cell tower to reach an authoritative DNS server. Can add significant latency.
+      a) Look up IP address.
+      b) then fielded by a name server (domain name)
+      c) cached for a time = speeds up subsequent requests by retieving the IP address from the cache instead of contating a name server again.
+
+  2. TLS Negotiation
+    - determines which cipher will be used to encrypt the comunication, verifies the server, and establishes that a secure connection is in place before beginning the actual transfer of data.
+    - while making the connection secure adds time to the page load, a secure connection is worth the latency expense, as the data transmitted between the browser and the web server cannot be decrypted by a third party.
+
+
+Response:
+  - once we have an established connection to a web server, the browser sents an initial HTTP GET request on behalf of the user (HTML file)
+  - Once the server receives the request, it will reply with relevant response headers and the contents of the HTML.
+
+    1. TCP SLow Start / 14kb Rule
+      - the first response packet will be 14Kb.
+      - TCP slow start = an algorithm which balances the speed of a network connection. Slow start grually increases the amount of data transmitted until the network maximum bandwidth can be determined.
+      - After receipt the initial packet, the server doubles the size of the next packet and double the next packet after that. 14 -> 28 -> 56Kb
+
+    2. Congestion Control
+      - As the server sends data in TCP packets, the user's client confirms delivery by returning acknowledgements, or ACKs.
+      - Congestion control algorithms use this flow of sent packets and ACKs to determine a send rate.
+
+
+Parsing:
+  - Once the browser receives the first chunk of data, it can begin parsing the information received.
+  - Parsing is the step the browser takes to turn the data it receives over the network into the DOM and CSSOM, which is used by the renderer to paint a page to the screen.
+  - The DOM is the internal representation of the markup for the browser. The DOM is also exposed, and can be manipulated through various APIs in JavaScript.
+  - Before anything is rendered to the screen, the HTML, CSS, and JavaScript have to be parsed.
+
+    1. Building the DOM Tree
+        aa) Processing the HTML markup and building the DOM tree.
+          - HTML parsing involves Tokenization (start and end tags, as well as attribute names and values) and Tree Construction.
+        ab) Preload Scanner
+          - While the browser builds the DOM tree, this process occupies the main thread.
+          - As this happens, the preload scanner will parse through the content available and request high priority resources like CSS, JavaScript, and web fonts.
+        b) Building the CSSOM
+          - Processing CSS and building the CSSOM tree.
+          - The browser goes through each rule set in the CSS, creating a tree of nodes with parent, child, and sibling relationships based on the CSS selectors.
+
+
+Render:
+  - Rendering steps include style, layout, paint and, in some cases, compositing.
+  - The CSSOM and DOM trees created in the parsing step are combined into a render tree which is then used to compute the layout of every visible element, which is then painted to the screen.
+
+    1. Style
+      c) The third step in the critical rendering path is combining the DOM and CSSOM into a render tree.
+        - The render tree holds all the visible nodes with content and computed styles -- matching up all the relevant styles to every visible node in the DOM tree, and determining, based on the CSS cascade, what the computed styles are for each node.
+
+    2. Layout
+      d) The fourth step in the critical rendering path is running layout on the render tree to compute the geometry of each node.
+        - Layout is the process by which the width, height, and location of all the nodes in the render tree are determined, plus the determination of the size and position of each object on the page.
+        - Once the render tree is built, layout commences. The render tree identified which nodes are displayed (even if invisible) along with their computed styles, but not the dimensions or location of each node. To determine the exact size and location of each object, the browser starts at the root of the render tree and traverses it.
+
+    3. Paint
+      e) The last step in the critical rendering path is painting the individual nodes to the screen, the first occurrence of which is called the first meaningful paint.
+        - In the painting or rasterization phase, the browser converts each box calculated in the layout phase to actual pixels on the screen.
+        - Painting involves drawing every visual part of an element to the screen, including text, colors, borders, shadows, and replaced elements like buttons and images.
+
+    4. Compositing
+      - When sections of the document are drawn in different layers, overlapping each other, compositing is necessary to ensure they are drawn to the screen in the right order and the content is rendered correctly.
+
+
+Interactivity:
+  1. Time to Interactive (TTI)
+    - the measurement of how long it took from that first request which led to the DNS lookup and SSL connection to when the page is interactive -- interactive being the point in time after the First Contentful Paint when the page responds to user interactions within 50ms. If the main thread is occupied parsing, compiling, and executing JavaScript, it is not available and therefore not able to respond to user interactions in a timely (less than 50ms) fashion.
+
+Critial Rendering Path: 5 Steps
+  1. Document Object Model
+  2. CSS Object Model
+  3. Render Tree
+  4. Layout
+  5. Paint
