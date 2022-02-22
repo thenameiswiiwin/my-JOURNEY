@@ -11,7 +11,7 @@
   |- [x] What is hosting?
 
 2. HTML
-  |- [] Learn the basics
+  |- [x] Learn the basics
   |- []  Forms and Validations
   |- []  Conventions and Best Practices
   | |- []  Writing Sematic HTMK
