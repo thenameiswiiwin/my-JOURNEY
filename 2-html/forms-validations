@@ -1,0 +1,54 @@
+# Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements set forth in the various form controls.
+
+# Client-side Form Validation
+  - Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away. If it gets to the serve and is the rejected, a noticeable delay is caused by a round trip to the server and then back to the client-side to tell the user to fix their data.
+  - However, the client-side validation should not be considered an exhaustive security measure! Your apps should always perform security checks on any form-submitted data on the server-side as well as the client-side, because client-side validation is too easy to bypass, so malicious users can still easily sent bad data through to your server.
+
+# What is Form Validation?
+  - the browser and/or the web server will check to see that the data is in the correct format and within the contraints set by the application. Validation done in the browser is called client-side validation, while validation done on the server is called server-side validation.
+  - If the information is correctly formatted, the application allows the data to be submiutted to the server and (usually) saved in a database; if theinformation isn't correctly formatted, it gives the user an error message explaining what needs to be corrected, and lets them try again.
+
+# 2 Types of Client-Side Validation
+  1. Built-In Form Validation
+    - HTML5 form controls features, validate most user data without relying on JavaScript. Through using validation attributes on the <form> element.
+      + required
+      + minlength
+      + maxlength
+      + type
+      + pattern
+  2. Validating Form using JavaScript
+    - use JavaScript if you want tot make control over the look and feel of native error messages or to deal with legacy browsers that do not support HTML's built-in form validation.
+    - Contraint Validation API
+      + consists of a set of method and properties available on the following form element DOM interfaces:
+        |- <button>
+        |- <fieldset>
+        |- <input>
+        |- <select>
+        |- <textarea>
+    - example:
+
+      const email = document.getElementbyID("mail")
+
+      email.addEventListener("input", (event) => {
+        if (email.validity.typeMismatch) {
+          email.setCustomValidity("I am expecting an e-mail address!")
+          email.reportValidity()
+        } else {
+          email.setCustomValidity("")
+        }
+      })
+
+# Validating Forms Without a Built-In API
+  - What kind of validation should I perform?
+    + You need to determine how to validate your data: string operations, type conversion, regular expressions, and so on. It's up to you.
+  - What should I do if form doesnt validate?
+    + This is clearly a UI matter. You have to decide how the form will behave. Does the form send the data anyway? Should you highlight the fields that are in error? Should you display error messages?
+  - How can I help the user to correct invalid data?
+    + In order to reduce the user's frustration, it's very important to provide as much helpful information as possible in order to guide them in correcting their inputs. You should offer up-front suggestions so they know what's expected, as well as clear error messages.
+
+# SUMMARY
+  - Client-side form validation sometimes requires JavaScript if you want to customize styling and error messages, but it always requires you to think carefully about the user. Always remember to help your users correct the datat they provide.
+  - BE SURE TO:
+    + Display explicit error messages
+    + Be permissive about the input format
+    + Point out exactly where the error occurs, especially on large forms.
