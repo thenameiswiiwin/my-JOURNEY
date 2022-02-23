@@ -12,11 +12,11 @@
 
 2. HTML
   |- [x] Learn the basics
-  |- []  Forms and Validations
-  |- []  Conventions and Best Practices
-  | |- []  Writing Sematic HTMK
-  | |- []  Accessibility
-  | |- []  SEO Basics
+  |- [x]  Forms and Validations
+  |- [x]  Conventions and Best Practices
+  | |- [x]  Writing Sematic HTML
+  | |- [x]  Accessibility
+  | |- [x]  SEO Basics
 
 3. CSS
   |- [] Learn the basics
