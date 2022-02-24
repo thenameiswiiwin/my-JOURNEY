@@ -201,4 +201,593 @@
   - Total Height Calulation
     + Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
 
+  - Example:
 
+    div {
+      width: 320px;
+      padding: 10px;
+      border: 5px solid gray;
+      margin: 0;
+    }
+
+    |- 320px (width)
+    + 20px (left + right padding)
+    + 10px (left + right border)
+    + 0px (left + right margin)
+    = 350px
+
+# OuAntline
+  - An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+  - Outline Properrties:
+    + outline-style
+      |- sets the style of an outline
+    + outline-color
+      |- sets the color of an outline
+    + outline-width
+      |- sets the width of an outline
+    + outline-offset
+      |- specifies the space between an outline and the edge or border of an element.
+    + outline
+      |- a shorthand property for setting outline-width, outline-style, and outline-color in one declaration.
+
+  - NOTE: Outline differs from borders! Unlike border, the outline is drawn ouside the element's border, and may overlap other content. Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width of the outline.
+
+  1. Outline Style (outline-style: "values")
+    + dotted
+      |- defines a dotted outline
+    + dashes
+      |- defines a dashed outline
+    + solid
+      |- defines a solid outline
+    + double
+      |- defines a double outline
+    + groove
+      |- defines a 3D grooved outline
+    + ridge
+      |- defines a 3D ridged outline
+    + inset
+      |- defines a 3D inset outline
+    + outset
+      |- defines a 3D outset outline
+    + none
+      |- defines no outline
+    + hidden
+      |- defines a hidden outline
+
+  2. Outline Width (outline-width: "value")
+    - specifes the width of the outline, and can have one of the following values:
+      + thin (1px)
+      + medium (3px)
+      + thick (5px)
+      a specific size (in px, pt, cm, em, etc)
+
+  3. Outline Color (outline-color: "value")
+    - used to set the color of the outline
+    - the color can be set by: name, HEX, RGB, HSL, invert.
+
+  4. Outline Shorthand (outline: "width" "style (required)" "color")
+    - specified as one, two, or three values from the list above. The order of the values does not matter.
+
+  5. Outline Offset (outline-offset: "value")
+    - adds space between an outline and the edge/border of an element. The spave between an element and its outline is transparent.
+
+# TEXT
+  - formatting text
+
+  1. Color (color: "value")
+    - used to set the color of the text. (color name, HEX, RGB)
+
+  2. Text Alignment (text-align: "value")
+    - properties:
+      + text-align
+        |- specifies the horizontal alignment of text
+      + text-align-last
+        |- specifies how to align the last line of a text.
+      + direction
+        |- specifies the text direction/writing direction.
+      + unicode-bidi
+        |- used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document.
+      + vertical-align
+        |- sets the vertical alignment of an element. (baseline, text-top, text-bottom, sub, super)
+    - used to set the horizontal alignment of a text.
+    - a text can be left or right aligned, centered, or justified
+      |- When text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers.)
+
+  3. Text Decoration
+    - used to add decoration line to a text.
+    - properties:
+      + text-decoration-line
+        |- used to add a decoration line to text (overline, line-through, underline, overline underline)
+      + text-decoration-color
+        |- used to set the color of the decoration line.
+      + text-decoration-style
+        |- used to set the style of the decoration line. (solid, double, dotted, dashed, wavy)
+      + text-decoration-thickness
+        |- used to set the thickness of a decoration line. (auto, px)
+      + text-decoration
+        |- shorthand
+          - text-decoration: underline red double 5px;
+
+  4. Text Transformation
+    - used to specify uppercase to lowercase letters in a text.d
+    - text-transform: "uppercase", "lowercase", "capitalize";
+
+  5. Text Spacing
+    - properties:
+      + text-indent
+        |- used to specify the indentation of the first line of a text
+      + letter-spacing
+        |- used to specify the space between the characters in a text.
+      + line-height
+        |- used to specify the space between lines
+      + word-spacing
+        |- used to specify the space between the words in a text.
+      + white-space
+        |- specifies how white-space inside an element is handled
+
+  6. Text Shadow
+    - property adds shadow to text.
+    - text-shadow: "horizontal shadow in px" "vertical shadow in px" "blur in px" "color";
+
+# FONT
+
+  1. Font-Family
+    - font-family: "value";
+    - If the font name is more than one word, it must be in quotation marks, like: "Times New Roman"
+    - The font-family property should hold several font names as a "fallback" system, to ensure maximum compatibility between browsers/operating systems. Start with the font you want, and end with a generic family (to let the browser pick a similar font in the generic family, if no other fonts are available.). The font name should separated with comma.
+
+  2. Font Web Safe
+    - arial, verdana, helvetica, tahoma, trebuchet ms, times new roman, georgia, garamond, courier new, brush script mt.
+
+  3. Font Fallbacks
+    - serif, sans-serif, monospace, cursive, fantasy.
+
+  4. Font Style
+    - Font Style
+      + used to specify italic text
+      + font-style: "normal", "italic", "oblique";
+    - Font Weight
+      + speifies the weight of a font
+      + font-weight: "normal", "bold";
+    - Font Variant
+      + specifies whether or not a text should be displayed in a small-caps font.
+      + font-variant: "normal", "small-caps";
+      + in a small-cap font, all lowercase letters are converted to uppercase letters. However, the converted uppercase ;etters appears in a smaller font size than the original uppercase letters in the text.
+
+  5. Font Size
+    - sets size of the text.
+    - absolute size
+      + specified size
+      + does not allow user to change the text size in all browsers
+      + useful when the physical size of the output is known
+    - relative size
+      + relative to surrouding elements
+      + allow user to change the text size in browsers
+    - EM
+      + allow users to resize the text
+      + 1em === current font size.
+      + 16px === 1 em
+    - Responsive Font Size
+      + vw unit (viewport width)
+    - Shorthand
+      + properties:
+        |- font-style
+        |- font-variant
+        |- font-weight
+        |- font-size/line-height
+        |- font-family
+      + font: italic small-caps bold 12px/30px Georgia, serif;
+
+# Links
+  - can be styled with any CSS property (color, font-family, background, etc.)
+  - links can be styled differently depending on what state they are in:
+    + a:link
+      |- a normal, unvisited link
+    + a:visited
+      |- a link the user has visited
+    + a:hover
+      |- a link when the user mouses over it
+    + a:active
+      |- a link the moment it is clicked
+  - Order Rules:
+    + a:hover MUST come after a:link and a:visited.
+    + a:active MUST come after a:hover
+  - text-decoration property mostly used to remove underlines from links
+
+# Lists
+  - unordered list
+    + ul
+    + list items are marked with bullets
+  - ordered list
+    + ol
+    + list items are marked with numbers or letters
+
+  1. Different List Item Markers
+    - list-style-type: "circle", "square", "upper-roman", "lower-alpha";
+      + specifies the type of list item marker
+  2. An Image as The List Item Marker
+    - list-style-image: url("sqpurple.gif");
+    - specifies an image as the list item marker
+  3. Position The List Item Marker
+    - list-style-position: "outside", "inside";
+      + specifies the position of the list-item markers (bullet points)
+    - Outside
+      + the bullet point will be outside of the list.
+      + The start of each line of the list item will be aligned vertically
+    - Inside
+      + the bullet point will be inside of the list.
+      + A it is part of the list item, it will be part of the text and push the text at the start.
+  4. Remove Default Settings
+    - list-style-type: "none";
+    - remove bullets/markers
+    - NOTE:
+      + list also has default margin and padding. To remove this, add "margin: 0" and "padding: 0" to <ul> or <ol>
+  5. Shorthand
+    - list-style: square inside url("sqpurple.gif");
+
+# Display
+  - specifies if/how an element is displayed
+
+  1. Block-Level Elements
+    - Always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can)
+      + div, h1-h6, p, form, header, footer, section
+  2. Inline Elements
+    - Does Not start on a new line and only takes up as much width as necessary.
+      + span, a, img
+
+  3. Display: "none";
+    - commonly used with JavaScript to hide and show elements without deleting and recreating them.
+
+  4. Hide an Element - display: "none"; or visibility: "hidden";
+    - display: "none";
+      + the element will be hidden, and the page will be displayed as if the element is not there
+    - visibility: "hidden";
+      + hides an element, However, the element will still take up the same space as before.
+
+# Layout - Width and Max-Width
+ - setting width of a block-level element will prevent it from stretching out to the edges of its container. Then, you can set the margins to auto, to horizontally center the elemenet within its container. The elemenet will take up the specified width, and the remaining space will be split equally between the two margins
+  + The PROBLEM with the <div> above occurs when the browser window is smaller than the width of the element. The browser then adds a horizontal scrollbar to the page.
+  + using "max-width" instead, in this situation, will improve the browser's handling of small windows. This is important when making a site usable on small devices.
+  + Resize the browser window to less than 500px wide, to see the different between thne two divs.
+
+# Layout - Position Property
+  - "position" property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky)
+  - position: "static", "relative", "fixed", "absolute", "sticky";
+    + elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the "position" property is set first. They also work diffrently depending on the position value.
+
+  1. Static
+    - default
+    - static positioned elements are not affected by the top, bottom, left, and right properties.
+    - an element with "position: static;", is not positioned in any special way; it is always positioned according to the normal flow of the page.
+
+  2. Relative
+    - positioned relative to its normal position.
+    - setting the top, bottom, left, and right properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+
+  3. Fixed
+    - positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+    - a fixed element does not leave a gap in the page where it would normally have been located.
+
+  4. Aboslute
+    - positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed.)
+    - However, if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+      + Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+  5. Sticky
+    - positioned based on the user's scroll position
+    - a sticky element toggles between "relative" and "fixed", depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like "position: fixed;")
+
+# Layout - Z-Index Property
+  - specifies the stack order of an element
+  - overlap other elements.
+  - element is placed in fromt of, or behind, the others.
+    + "z-index" only works on "positioned elements" (position: aboslute, positiion: relative, position: fixed, position: sticky) and flex items (elements that are direct children of display: flex elements)
+    + if two positioned elements overlap each other without a "z-index" specified, the element defined "last in the HTML code" will be shown on the top.
+
+# Layout - Display: Inline-BLock
+  - Major different between "display: inline;" and "display: inline-block;"
+    + inline-block allows to set a width and height on the element.
+  - "display: inline-block", the top and bottom margins/paddings are repected, but with display: inline they are not.
+  - Major diffrent between "display: block;" and "display: inline-block;"
+    + inline-block does not add a line-break after the element, so the element can sit next to other elements.
+
+# Layout - Horizontal & Vertical Align
+  1. Center Align Element
+    - horizontally center a block element (like <div>) --> use "margin: auto;"
+    - setting the width of the element will prevent it from stretching out to the edges of its container
+    - the element will then take up the specified width, and the remaining space will be split equally between the two margins.
+      + NOTE: center aligning has no effect if the "width" property is not set (or set to 100%)
+
+  2. Center Align Text
+    - "text-align: center;"
+
+  3. Center an Image
+    - set left and right margin to "auto" and make it into a block element.
+
+  4. Left and Right Align -- Using Position
+    - "position: absolute;"
+    - NOTE:
+      + Absolute positioned elements are removed from the normal flow, and can overlap elements.
+
+  5. Left and Right Align -- Using Float
+    - "float: right, left, top, bottom;"
+
+  6. The clearfix Hack
+    - Note:
+      + If an element is taller than the element containing it, and it is floated, it will overflow outside of its container.You can use the "clearfix hack" to fix this.
+      + Example:
+
+        .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+  7. Center Vertically -- Using Padding
+    - use top and bottom "padding"
+    - vertically center
+      + use top and bottom "padding"
+        .center {
+          padding: 70px 0;
+          border: 3px solid green;
+        }
+
+    - center both vertically and horizontally
+      + use "padding" and "text-align: center"
+
+        .center {
+          padding: 70px 0;
+          border: 3px solid green;
+          text-align: center;
+        }
+
+    - center Vertically -- Using "line-height"
+      + "line-height" with a value that is equal to the height property
+
+        .center {
+          line-height: 200px;
+          height: 200px;
+          border: 3px solid green;
+          text-align: center;
+        }
+
+        /* If the text has multiple lines, add the following: */
+        .center p {
+          line-height: 1.5;
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+    - center vertically -- Using "position" & "transform"
+      + "transform" property
+
+        .center {
+          height: 200px;
+          position: relative;
+          border: 3px solid green;
+        }
+
+        .center p {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+    - Center Vertically -- "flexbox"
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        border: 3px solid green;
+      }
+
+# Combinators
+  - relationship between the selectors
+  - CSS selector can contain more than one simple selector.
+  - Four different combinators:
+
+    + decendant selector (space)
+      - matches all elements that are descendants of a specifies element
+      - example:
+          div p {
+            background-color: yellow;
+          }
+
+    + child selector (>)
+      - selects all elements that are the children of a specified element.
+      - example:
+          div > p {
+            background-color: yellow;
+          }
+
+    + adjacent sibling selector (+)
+      - used to select an element that is directly after another specific element.
+      - sibling elements must have the same parent element, and "adjacent" means "immediate following"
+      - example:
+          div + p {
+            background-color: yellow;
+          }
+
+    + general sibling selector (~)
+      - selects all elements that are next siblings of specified element.
+      - example:
+          div ~ p {
+            background-color: yellow;
+          }
+
+# Pseudo-classes
+  - "pseudo-class" --> special state of an element.
+  - Use Case:
+    + style an element when a user mouses over it
+    + style visited and unvisited links differently
+    + style an element when it gets focus
+
+  1. Syntax
+    - selector:pseudo-class {
+        property: value;
+      }
+
+  2. Anchor Pseudo-classes
+    - a:link {}
+    - a:visited {}
+    - a:hover {}
+    - a:active {}
+
+      + Note:
+        - "a:hover" MUST come after "a:link" and "a:visited" in the CSS definition in order to be effective! "a:active" MUST come after "a:hover" in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+
+  3. Pseudo-classes and HTML Classes
+    - Pseudo-classes can be combined with HTML classes:
+    - example:
+      a.highlight:hover {}
+
+  4. The :first-child Pseudo-class
+    - the ":first-child" pseudo-class matches a specified element that is the first child of another element.
+    - first <p> element
+      + p:first-child {}
+    - first <i> element in all <p> elements
+      + p i:first-child {}
+    - all <i> elements in all first child <p> elements
+      + p:first-child i {}
+
+  5. The :land Pseudo-class
+    - the ":land" pseudo-class allows you to define special rules for different languages.
+    - example:
+      + <p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+
+    - https://www.w3schools.com/css/css_pseudo_classes.asp
+
+# Pseudo-elements
+  - used to style specified parts of an element
+  - Use Case:
+    + style the first letter, or line, of an element
+    + Insert content before, or after, the content of an element.
+
+  - selector::pseudo-element {
+      property: value;
+    }
+
+  1. The "::first-line" Pseudo-element
+    - used to add a special style to the first line of a text.
+    - Note:
+      + the "::first-line" pseudo-element can only be applied to block-level elements
+    - "Properties" apply to the ::first-line pseudo- element:
+      + font properties
+      + color properties
+      + background properties
+      + word-spacing
+      + letter-spacing
+      + text-decoration
+      + vertical-align
+      + text-transform
+      + line-height
+      + clear
+
+  2. the "::first-letter" Pseudo-element
+    - used to add a special style to the first letter of text
+    - Note:
+      + the "::first-letter" pseudo-element can only be applied to block-level elements
+    - "Properties" apply to the "::first-letter" pseudo- element:
+      + font properties
+      + color properties
+      + background properties
+      + margin properties
+      + padding properties
+      + border properties
+      + text-decoration
+      + vertical-align (only if "float" is "none")
+      + text-transform
+      + line-height
+      + float
+      + clear
+
+  3. Pseudo-elements can be "combined" with HTML Classes
+    - p.intro::first-letter {}
+
+  4. The "::before" Pseudo-element
+    - used to insert some content before the content of an element.
+    - example:
+        h1::before {
+          content: url(smile.gif);
+        }
+
+  5. The "::after" Pseudo-element
+    - used to insert some content after the content of an element.
+    - example:
+        h1::after {
+          content: url(smile.gif);
+        }
+
+  6. The "::marker" Pseudo-element
+    - selects the markers of list items
+    - example:
+        ::marker {
+          color: red;
+          font-size: 23px;
+        }
+
+  7. The "::selection" Pseudo-element
+    - matches the portion of an element that is selected by a user.
+    - Properties can be applied to
+      + "::selection": "color", "background", "cursor", and "outline"
+
+# Opacity / Transparency
+  - specifies the opacity/transparency of an element.
+  - the "opacity" property can take a value from 0.0 - 1.0. The lower value, the more transparent
+
+  1. Transparent Hover Effect
+    - often used together with the "::hover" selector to change the opacity on mouse-over
+    - example:
+        img {
+          opacity: 0.5;
+        }
+        img:hover {
+          opacity: 1.0;
+        }
+
+# UNITS
+
+  1. Absolute
+    - cm, mm, in, px, pt, pc
+
+  2. Relative
+    - em, ex, ch, rem, vw, vh, vmin, vmax, %
+
+  - The em and rem units are practical in creating perfectly scalable layout!
+  * Viewport = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm
+
+# Specificity
+  - if there are two or more CSS rules that point to the same element, the selector with the highest specificity value will "win", and its style declration will be applied to that HTML element.
+  - Specificity === Score/Rank
+
+  1. Four Categories Specificity Level of a Selector:
+    - "Inline Styles"
+      + <h1 style="color: pink;">
+    - "IDs"
+      + #navbar
+    - "Classes, pseudo-classes, attribute selectors"
+      + .text, :hover, [href]
+    - "Elements and pseudo-elements"
+      + h1, :before
+
+  2. Calculate Specificity
+    - start at 0
+    - add 100 for each "ID" value
+    - add 10 for each "class" value (or "pseudo-class or attribute selector")
+    - add 1 for each "element selector" or "pseudo-element"
+
+      + Inline style gets a specificity value of 1000, and is always given the highest priority!
+      + There is one exception to this rule: if you use the "!important" rule, it will override inline styles!
+
+# Math Functions
+  - allow mathematical expressions to be used as property values.
+
+  1. "calc()"
+
+  2. "max()"
+
+  3. "min()"
