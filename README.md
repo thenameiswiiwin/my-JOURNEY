@@ -19,14 +19,14 @@
   | |- [x]  SEO Basics
 
 3. CSS
-  |- [] Learn the basics
-  |- [] Making Layouts
-  | |- [] Floats
-  | |- [] Positioning
-  | |- [] Displaying
-  | |- [] Box Model
-  | |- [] CSS Grid
-  | |- [] Flex Box
+  |- [x] Learn the basics
+  |- [x] Making Layouts
+  | |- [x] Floats
+  | |- [x] Positioning
+  | |- [x] Displaying
+  | |- [x] Box Model
+  | |- [x] CSS Grid
+  | |- [x] Flex Box
   |- [] Responsive design and Media Queries
 
 4. JavaScript
