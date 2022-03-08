@@ -1,0 +1,205 @@
+# Rounded Corners
+  - with the "border-radius" property, you can give any element "rounded corners"
+  - defines the radius of an element's corners.
+  - This property allows you to add rounded corners to elements
+
+  1. Border-radius - Specify Each Corner
+    - Have from one to four values.
+      |- top-left, top-right, bottom-right, bottom-left
+      |- top-left, bottom-left, bottom-right
+      |- top-left/bottom-right, top-right/bottom-left
+      |- One Value - applies to all four corners, rounded equally
+
+# Border Images
+  - "border-image"
+    |- set an image to be used as the border around an element
+    |- allows you to specify an image to be used instead of the normal borde around an element.
+  - The Property has three parts:
+    |- the image to use as the border
+    |- where the slice the image
+    |- define whether the middle sections should be repeated or stretched.
+  - The border-image property takes the image and slices it into nine sections, like a tic-tac-toe
+    board. It then places the corners at the corners, and the middle sections are repeated or stretched as you speecify.
+    |- For border-image to work, the element also needs the border property set!
+
+  1. Border-Image - Different SLice Values
+    - border-image: url(border.png) 20% round;
+
+# Multiple Backgrounds
+  - CSS allows you to add multiple backgroundimages for an element, through the background-image property.
+  - Different background iamges are separated by commas, and the images are stacked on top of each other, where the first image is closest to the viewer.
+  - Multiple background images can specified using either the individual background properties or "background" shorthand property.
+
+  1. Background Size
+    - background-size: <value>;
+    - allows you to specify the size of background image.
+    - The size can be specified in lengths, percentages, or by using one of the two keywords:
+      |- "contain"
+      |- "cover"
+    - Contain
+      + scales the background image to be as large as possible (but both its width and its height must fit inside the content area). As such, depending on the propertions of the background image and the background position area, there may be some areas of the background which are not covered by the background image.
+    - Cover
+      + scales the background image so that the content area is completely covered by the background image (both its width and height are equal to or exceed the content area). As such, some parts of the background image may not be visible in the background position area.
+
+  2. Define Sizes of Multiple Background Images
+    - "background-size"
+      + accepts multiple values for background size (using a comma-separated list), when working with multiple backgrounds.
+      + Example:
+
+        #exampleer1 {
+          background: ur(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+        }
+
+  3. Full Size Background Image
+    - have a background image on a website that covers the entire browser window at all time
+    - REQUIREMENTS:
+      + Fill the entire page with the image (no white space)
+      + Scale image as needed
+      + Center image on page
+      + Do not cause scrollbars
+
+  4. Hero Image
+    - a large image with text.
+    - can use different background properties on a <div> to create a hero image
+
+  5. Background-Origin Property
+    - specifies where the background image is positioned
+    - "background-origin" take three values:
+      + border-box
+        |- the background image starts from the upper left corner of the border
+      + padding-box
+        |- (default) the background image starts from the upper left corner of the padding edge
+      + content-box
+        |- the background image starts from the upper left corner of the content
+
+  6. Background-Clip Property
+    - specifies the painting area of the background
+    - "background-clip" takes three different values:
+      + border-box
+        |- (default) the background is panted to the outside edge of the border
+      + padding-box
+        |- the background is painted to the ourside edge of the padding
+      + content-box
+        |- the background is painted within the content box
+
+# Color Keywords
+  - "transparent"
+  - "currentcolor"
+  - "inherit"
+
+  1. Transparent
+    - used to make a color transparent.
+    - often used to make a transparent background color for an element.
+    - "transparent" keyword is equivalent to "rgba(0,0,0,0)". RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
+
+  2. Currentcolor
+    - like a variable that holds the current value of the color property of an element.
+    - "currentcolor" can be useful if you wnt a specific color to be consistent in an element or a page.
+
+  3. Inherit
+    - specifies that a property should inherit its value from its parent element
+    - can be used for any CSS property, and on any HTML element.
+
+# Gradients
+  - display smooth transitions between two or more specified colors.
+  - Three types of Gradients:
+    + Linear Gradients
+      |- down/up/left/right/diagonally
+    + Radial Gradients
+      |- defined by their center
+    + Conic Gradients
+      |- rotated around a center point
+
+  1. Linear Gradients
+    - to create a linear gradient you must define at least two color stops.
+      + color stops are the colors you want to render smooth transitions among
+      + can also set a starting point and a direction (or an angle) along with gradient effect.
+    - Syntax:
+      |- background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+    - Directions:
+      |- Top to Bottom
+        + default
+      |- Left to Right
+      |- Diagonal
+        + make a gradient diagonally by specifying both the horizontal and vertical starting positions.
+    A. Using Angles
+      - If you want more control over the direction of the gradient, you can define an angle, iinstead of the predefined directions. A value of 0deg is equivalent to "to top". A value 90def is equivalent to "to right". A value of 180def is equivalent to "to bottom"
+    B. Using Transparency
+      - create fading effects.
+      - use rgba() function to define the color stops.
+      - the last paramenter in the rgba() function can be value from 0 to 1, and it defines thet transparency of the color: 0 indicates full transparency, 1 indicates full color (no transparency)
+    C. Repeating a linear-gradient
+      - "repeating-linear-gradient()"
+        + this function is used to repeat linear gradients
+
+  2. Radial Gradients
+    - define at least two color stops
+    - by default, shape is ellipse, size is farthest-corner, and position is center.
+    - Evenly spaced color stops (default)
+
+  3. Conic Gradients
+    - a gradient with color transitions rotated around a center point
+    - must define at least two colors.
+
+# Shadow Effects
+  - add shadow to text and to elements
+  - "text-shadow"
+  - "box-shadow"
+
+  1. Text Shadow
+    - applies shadow to text
+    - you only specify the horizontal shadow and the vertical shadow. (px)
+    A. Multiple Shadows
+      - To add more than one shadow to the text, you can add a comma-separated list of shadows.
+
+  2. Box Shadow
+    - used to apply one or more shadows to an elemment
+    A. Specify a Horizontal and a Vertical Shadow
+      - the default color of the shadow is the current text-color
+    B. Specify a Color for the Shadow
+      - "color" parameter defines the color of the shadow
+    C. Add a Blur Effect to the Shadow
+      - "blur" parameter defines the blur radius.
+      - The higher the number, the more blurred the shadow will be.
+    D. Set the Spread Radius of the Shadow
+      - "spread" parameter defines the spread radius.
+      - A positive value increases the size of the shadow
+      - A negative value decreases the size of the shadow.
+    E. Set the inset Parameter
+      - "inset" parameter changes the shadow from an outer shadow(outset) to an inner shadow
+
+# 2D Transforms
+  - allow you to move, rotate, scale, and skew elements.
+  - Transformation Method:
+    + translate(x, y)
+      - moves an element from its current position (according to the parameters given for the X-axis and the Y-axis)
+    + rotate(angle)
+      - rotates an element clockwise or counter-clockwise according to a given degree
+      - using negative values will rotate the element counter-clockwise
+    + scaleX(n)
+      - increases or decreases the width of an element
+    + scaleY(n)
+      - increases or decreases the height of an element
+    + scale(x, y)
+      - increase or decreases the size of an element(according to the parameters given for the width and height)
+    + skewX(angle)
+      - skews an element along the X-axis by the given angle
+    + skewY(angle)
+      - skews an element along the Y-axis by the given angle
+    + skew(angle)
+      - skews an element along the X and Y-axis by the given angles.
+    + matrix(n, n, n, n, n, n,)
+      - combines all the 2D transform methods into one.
+      - take six parameters, containing mathematic functions, which allows you to rotate, scale, move (translate), and skew elementsl
+      - The parameters are as follow:
+        + matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY());
+
+# 3D Treansforms
+  - "transform" property
+  - 3D Transformation Methods:
+    + rotateX()
+      - rotates an element around its X-axis at a given degree
+    + rotateY()
+      - rotates an element around its Y-axis at a given degree
+    + rotateZ()
+      - rotates an element around its Z-axis at a given degree

@@ -1,0 +1,68 @@
+# What is "Floats"?
+  - CSS positioning property.
+  - Floated elements that use absolute positioning. Absolutely positioned page elements are "removed" from the flow of the webpage, like when the text box in the print layout was told to ignore the page wrap. Abslutely positioned page elements will not affect the position other elements and other elements will not affect them, whether they touch each other or not.
+
+# Example:
+
+  #sidebar {
+    float: right;
+  }
+
+# Four Valid Values
+  - Left
+  - Right
+  - None (the default)
+    + ensures the element will not float and "Inherit" which will assume the float value from the elements parent element.
+
+# What are floats used for?
+  - float can be used to create "entire web layout"
+    + While float can still used for layout, these days, we have much stronger tools for creating layout on web pages. Namely, "Flexbox" and "Grid". Floats are still useful to know about because they have some abilites entirely unique to them.
+  - Floats are also helpful for layout is smaller instances.
+
+# Clearing the Float
+  - Float's sister property is clear. An element that has the clear property set on it will not move up adjacent to the float like the float desires, but will move itself down past the float. Again an illustration probably does more good than words do.
+  - cleared to ensure the element statys beneath both floated columns.
+  - Clear has four valid values as welll:
+    + BOTH
+      |- most commonly used
+      |- clears floats coming from either direction.
+    + LEFT and RIGHT
+      |- used to only clear the float from one direction respectively.
+    + NONE
+      |- default
+      |- typically unnecessary unless removing a clear value from a cascade.
+    + INHERIT
+      |- not supported in Internet Explorer
+  - Clearing only the left or right float, while less commonly seen in the wild, has it used.
+
+# The Great Collapse
+  - floats --> affect the element that contains them (their "parent" element). If this parent element contained nothing but floated elements, the height of it would literally collapse to nothing.
+  - This isnt always obviously if the parent doesnt contain any visually noticeable background, but it is important to be aware of.
+  - Scenario:
+    |- If the block element on top were to have automatically expanded to accommodate the floated element, we would have unnatural spacing break in the flow of text between paragraphs, with no practical way of fixing it. If this were the case, us designers would be complaining much harder about this behavior than we do about collapsing.
+    |- Collapsing almost always needs to be dealt with tot prevent strange layout and cross-browser problems.
+      + Fix it by clearing the float 'after' the floated elements in the container but "before" the close of the container.
+
+# Techniques for Clearing Floats
+  - If you are in a situation where you always know what the succeeding element is going to be, you can apply the "clear: both;" value to that element and go about your business.
+  - When Does "clear: both;" does not work:
+    |- The Empty Div Method
+      + quite literally an "empty div"
+      + <div style="clear: both;"></div>
+    |- The Overflow Method
+      + relies on setting the overflow CSS proptery on a parent element.
+      + If this property is set to auto or hidden on the parent element, the parent will expand to contain the floats, effectively clearing it for succeeding elements.
+      + Overflow property is not specifically for clearing floats. "Be Careful" not to hide content or trigger unwanted scrollbars.
+    |- The Easy Clearing Method
+      + use a clever CSS pseudo selector ":after" to clear floats.
+      + Rather than setting the overflow on the parent, you apply an additional class like "clearfix" to it. Then Apply this CSS:
+        .clearfix:after {
+          content: ".";
+          visibility: hidden;
+          display: block;
+          height: 0;
+          clear: both;
+        }
+
+# Problem with Float
+  - The majority of fragility of float comes from IE6 and the slew of float-related bugs it has.
