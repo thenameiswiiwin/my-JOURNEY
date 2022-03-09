@@ -1,0 +1,99 @@
+# Basics and Terminology
+  - Flex Containter
+    |- parent element
+  - Flex Item
+    |- children
+  - Flex-Flow Directions
+    |- if the "regular" layout is based on both block and inline flow directions, the flex layout is based on "flex-flow directions".
+  - Items will be alid out following either "main axis" (from main-start to main-end) or the "cross axis" (from cross-start to cross-end).
+    |- Main Axis
+      + the main axis of a flex container is the primary axis along which flex items are layout.
+      + beware, it is not necessarily horizontal; it depends on the "flex-direction" property.
+    |- Main-start | Main-end
+      + the flex items are placed within the container starting from main-start and going to main-end
+    |- Main size
+      + a flex item's width or height, whichever is in the main dimension, is the item's main size.
+      + the flex item's main size property is either the 'width or 'height' property, whichever is in the main dimension.
+    |- Cross Axis
+      + the axis perpendicular to the main axis is called the cross axis.
+      + its direction depends on the mian axis direction
+    |- Cross-start | Cross-end
+      + Flex lines aare filled with items and placed into the container starting on the cross-start of the flex container and going toward the cross-end side.
+    |- Cross size
+      + the width or height of a flex, whichever is in the cross dimension, is the item's cross size.
+      + The cross size property is whichever of 'width' or 'height' that is the cross dimension
+
+# Flexbox Property
+  |- Flex Container (Parent Properties)
+    + "display"
+      - defines a flex container.
+      - 'inline' or 'block' depending on the given value.
+      - it enables a flex context for all its direct children.
+      - Note: CSS columns have no effect on a flex container
+      - display: flex; /* or inline-flex */
+    + flex-direction
+      - this establishes the main-axis, thus defining the direction flex-items are placed in the flex container.
+      - flexbox is (aside from optional wrapping) a single-direction layout concept.
+      - think of flex items as primarily laying out either in horizontal rows or vertical columns
+      - Values:
+        > row | row-reverse | column | column reverse
+    + flex-wrap
+      - by default, flex items will all try to fit onto one line
+      - you can change that and allow the items to wrap as needed.
+      - Values
+        > nowrap | wrap | wrap-reverse
+    + flex-flow
+      - this is a "shorthand" for "flex-direction" and "flex-wrap"
+      - define the flex container's main and cross axes
+      - default value is "row nowrap"
+    + justify-content
+      - defines the alignment along the main axis
+      - help distribute extra space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximu;m size.
+      - it also exerts some control over the aligment of items when they overflow the line.
+      - Values
+        > flex-start | flex-end | start | left | right | center | space-betwen | space-around | space-evenly
+    + align-items
+      - defines the default behavior for how flex items are laid out along the "cross axis" on the current line.
+      - think of it as the "justify-content" version of the "cross axis" (perpendicular to the main-axis)
+      - Value:
+        > stretch | flex-start / start / self-start | flex-end / end / self-end | center | baseline
+    + align-content
+      - aligns a flex container's lines within when there is extra space in the cross axis, similar to jutify-content aligns individual items within the main-axis.
+      - NOTE:
+        > this property only takes effect on multi-line flexible container, where flex-wrap is set to either wrap or wrap-reverse
+        > a single-line flexible container (i.e. where flex-wrap is set to its default value, no-wrap), will not reflect align-content
+      - Values:
+        > normal | flex-start / start | flex-end / end | center | space-betwen | space-around | space-evenly | stretch
+    + gap, row-gap, column-gap
+      - explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.
+      - the behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow (because of something like justify-content: space-between;) then the gap will only take effect if that space would end up smaller
+      - it is not exclusively for flexbox, gap works in grid and multi-column layout as well
+
+  |- Flex Items (Properties for Children)
+    + order
+      - by default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container.
+      - items with the same order revert to source order.
+    + flex-grow
+      - defines the ability for a flex item to grow if necessary.
+      - it accepts "unitless" value that serves as proportion.
+      - it dedicates what amount of the available space inside the flex container the item should take up
+      - if all items have "flex-grow" set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, that child woud take up twice as much of the space either one of the others (or it will try, at least)
+      - Negative value are Invalid
+    + flex-skrink
+      - defines ability for a flex item to shrimk if necessary
+      - Negative value are Invalid
+    + flex-basis
+      - defines the default size of an element before the remaining space is distributed.
+      - it can be a length (e.g. 20%, 5rem , etc) or a keyword. The "auto" keyword means "loook at my width or height property" (which was temporaily done by main-size keyword until deprecated)
+      - the content "keyword" means "size it based on the item's content" - this keyword isnt well supported yet, so it's hard to test and harder to know what its brethren max-content, min-content, and fit-content do
+      - if set to 0, the extra space around content isnt factored in. If set to "auto", the extra space is distributed based on its "flex-grow" value
+    + flex
+      - "shorthand" for flex-grow, flex-shrink, and flex-basis combined.
+      - the second and third parameters (flex-shrink and flex-basis) are optional
+      - Default - 0 1 auto, but if you set it with a single number value, like flex: 5;, that chagnes  the flex-basis to 0%, so it;s like setting flex-grow: 5; flex-shrink: 1; flex-basis: 0%;
+      - "It is recommended that you use this shorthand property" rather than set the individual properties. The shorthand sets the other value intelligently
+    + align-self
+      - allows the default alignment (or the one specified by align-item) to be overridden for individual flex-items
+      - Values:
+        > auto | flex-start | flex-end | center | baseline | stretch
+      - NOTE: float, clear and vertical-align have no effect on a flex item
